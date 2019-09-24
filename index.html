@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
+    <base href="./">
+    <link rel="stylesheet" href="D://Source/Atomy/node_modules/bulma/css/bulma.css">
+    <link rel="stylesheet" href="D://Source/Atomy/style.css">
+    <link rel="stylesheet" href="D://Source/Atomy/extraStyle.css">
+
+    <script>
+    const $ = require('D://Source/Atomy/node_modules/jquery');
+    $(document).ready(function(){
+      $('#loading').addClass('is-active')
+      setTimeout(() => {
+        $('#loading').removeClass('is-active')
+      }, 4000);
+    })
+    </script>
+
+    <title>Atomy DataTable</title>
+  </head>
+  <body>
+    <div class="columns">
+      <div class="column is-3">
+        <aside class="menu">
+          <p class="menu-label">
+            General
+          </p>
+          <ul class="menu-list">
+            <li><a>Dashboard</a></li>
+            <li><a>Table</a></li>
+          </ul>
+          <p class="menu-label">
+            Tools
+          </p>
+          <ul class="menu-list">
+              <li><a class="open-modal" id="insert">Insert Data</a></li>
+              <li><a class="open-modal" id="features">Advanced Features</a></li>
+            </ul>
+      </div>
+  
+      <div class="column is-9">
+        <table id="table1" class="table display is-fullwidth">
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Tanggal</th>
+              <th>ID</th>
+              <th>Resi</th>
+              <th>HP</th>
+              <th>Barang</th>
+              <th>Quantity</th>      
+            </tr>
+           </thead>
+           
+          <tbody>
+            <tr>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+   
+    <div class="modal" id="input">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+          <div class="field">
+              <div class="control">
+                  <div class="columns">
+                      <div class="column is-half">
+                          <input class="input" type="text" placeholder="Resi" id="inputResi">
+                      </div>
+                      <div class="column is-half">
+                          <input class="input" type="text" placeholder="ID" id="inputID">
+                      </div>
+                  </div>
+                <div class="columns">
+                  
+                  <div class="column is-half">
+                      <input class="input" type="text" placeholder="Nama" id="inputNama">
+                  </div>
+                  <div class="column">
+                      <input class="input" type="text" placeholder="Tanggal" id="inputTanggal">
+                  </div>
+                </div>
+                <div class="columns">
+                    
+                    <div class="column is-two-third">
+                        <input class="input" type="text" placeholder="No HP" id="inputHP">
+                    </div>
+                    <div class="column is-two-third">
+                        <input class="input" type="text" placeholder="Nama Barang" id="inputBarang">
+                    </div>
+                    <div class="column">
+                        <input class="input" type="text" placeholder="Quantity" id="inputQty">
+                    </div>
+                </div>
+              </div>
+             
+            </div>
+            <div>
+                <div class="level">
+                  <div class="level-item">
+                      <button class="button is-primary" id="insert">Insert</button>
+                  </div>
+                  <div class="level-item">
+                      <button class="button is-danger" id="cancel">Cancel</button>
+                  </div>
+                </div>
+      </div>
+      <button class="modal-close is-large" aria-label="close" id="closeinput"></button>
+    </div>
+    </div>
+
+    <div class="modal" id="edit">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="field">
+          <div class="control">
+              <div class="columns">
+                  <div class="column is-half">
+                      <input class="input" type="text" placeholder="Resi" id="editResi">
+                  </div>
+                  <div class="column is-half">
+                      <input class="input" type="text" placeholder="ID" id="editID">
+                  </div>
+              </div>
+            <div class="columns">
+              
+              <div class="column is-half">
+                  <input class="input" type="text" placeholder="Nama" id="editNama">
+              </div>
+              <div class="column">
+                  <input class="input" type="text" placeholder="Tanggal" id="editTanggal">
+              </div>
+            </div>
+            <div class="columns">
+                
+                <div class="column is-two-third">
+                    <input class="input" type="text" placeholder="No HP" id="edithp">
+                </div>
+                <div class="column is-two-third">
+                    <input class="input" type="text" placeholder="Nama Barang" id="editbarang">
+                </div>
+                <div class="column">
+                    <input class="input" type="text" placeholder="Quantity" id="editqty">
+                </div>
+            </div>
+          </div>
+         
+        </div>
+        <div>
+            <div class="level">
+              <div class="level-item">
+                  <button class="button is-primary" id="update">Update</button>
+              </div>
+              <div class="level-item">
+                  <button class="button is-danger" id="remove">Remove</button>
+              </div>
+            </div>
+            
+        </div>
+      </div>
+      <button class="modal-close is-large" aria-label="close" id="closeedit"></button>
+    </div>
+
+
+
+    <div class="modal" id="loading" style="background-color:white;">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+          <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+
+        <div class="field">
+        <div><p style="color: white;"> Tunggu Sebentar .. </p></div>
+         
+        </div>
+      </div>
+    </div>
+       <script>
+      // You can also require other files to run in this process
+      require('D:/Source/Atomy/renderer.js')
+    </script>
+  </body>
+</html>

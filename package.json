@@ -1,0 +1,39 @@
+{
+  "name": "atomy",
+  "version": "1.0.0",
+  "description": "data retiriever for atomy",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "nodemon --exec electron ."
+  },
+  "author": "axel halintar",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^5.0.5"
+  },
+  "dependencies": {
+    "bulma": "^0.7.5",
+    "datatables.net": "^1.10.19",
+    "datatables.net-autofill": "^2.3.3",
+    "datatables.net-autofill-dt": "^2.3.3",
+    "datatables.net-buttons": "^1.5.6",
+    "datatables.net-buttons-dt": "^1.5.6",
+    "datatables.net-colreorder-dt": "^1.5.1",
+    "datatables.net-dt": "^1.10.19",
+    "datatables.net-select-dt": "^1.3.0",
+    "jquery": "^3.4.1",
+    "mongodb": "^3.2.7",
+    "nodemon": "^1.19.1"
+  },
+  "build": {
+    "appId": "com.atomy",
+    "directories": {
+      "output" : "atomyApp"
+    },
+    "win" :{
+      "icon" : "logo/icon.png"
+    },
+    "productName" : "Atomy DataTable"    
+  }
+}
