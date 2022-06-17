@@ -10,7 +10,7 @@
   "author": "axel halintar",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^5.0.5"
+    "electron": "^15.5.5"
   },
   "dependencies": {
     "bulma": "^0.7.5",
